@@ -5,6 +5,11 @@ A polished, interactive **wall calendar** component built with **Next.js 16** an
 ![Wall Calendar](https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=800&h=400&fit=crop)
 
 ---
+## Live Demo
+
+https://calendar123-tau.vercel.app/
+
+---
 
 ## ✨ Features
 
@@ -142,12 +147,6 @@ src/app/
 | 768–1023px | Stacked (notes below calendar) |
 | <768px | Stacked, optimized touch targets |
 | <480px | Compact mobile layout |
-
----
-
-## 📄 License
-
-This project was built as part of a frontend engineering challenge.
 
 ---
 
