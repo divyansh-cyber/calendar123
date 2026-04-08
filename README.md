@@ -148,6 +148,5 @@ src/app/
 | <768px | Stacked, optimized touch targets |
 | <480px | Compact mobile layout |
 
----
 
-Made with ❤️ by Divyansh Rai
+
