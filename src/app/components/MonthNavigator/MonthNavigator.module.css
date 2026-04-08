@@ -1,0 +1,99 @@
+.navigator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 8px;
+  background: var(--calendar-bg);
+}
+
+.navCenter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.monthYearBtn {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.monthYearBtn:hover {
+  background: var(--hover-bg);
+  color: var(--accent-color);
+}
+
+.todayBtn {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  background: var(--accent-subtle);
+  border: 1.5px solid var(--accent-color);
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.todayBtn:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--hover-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.navBtn:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.navBtn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+  .navigator {
+    padding: 12px 16px 6px;
+  }
+
+  .monthYearBtn {
+    font-size: 1rem;
+    padding: 4px 10px;
+  }
+
+  .navBtn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .todayBtn {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+}

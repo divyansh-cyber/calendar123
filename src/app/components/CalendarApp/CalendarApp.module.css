@@ -1,0 +1,144 @@
+.calendarWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: var(--page-bg);
+  transition: background 0.4s ease;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  max-width: 1100px;
+  width: 100%;
+  align-items: start;
+}
+
+.notesSidebar {
+  order: 0;
+  min-width: 0;
+}
+
+/* Calendar card */
+.calendarCard {
+  background: var(--calendar-bg);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.calendarCard:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Page flip animation container */
+.flipContainer {
+  perspective: 1200px;
+}
+
+.flipContent {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.flipContent.flipping {
+  animation: flipPage 0.5s ease;
+}
+
+@keyframes flipPage {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(-8deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* Footer */
+.footer {
+  padding: 12px 20px;
+  text-align: center;
+  background: var(--calendar-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.footerText {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.keyHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  padding: 2px 6px;
+  background: var(--hover-bg);
+  border-radius: 4px;
+  font-size: 0.6rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .notesSidebar {
+    order: 2;
+  }
+
+  .calendarCard {
+    order: 1;
+  }
+
+  .calendarWrapper {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendarWrapper {
+    padding: 12px 8px;
+  }
+
+  .layout {
+    gap: 16px;
+  }
+
+  .calendarCard {
+    border-radius: 14px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .calendarWrapper {
+    padding: 0;
+    background: #fff;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .calendarCard {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

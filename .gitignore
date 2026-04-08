@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+.vs/
 
 # debug
 npm-debug.log*
@@ -35,6 +36,11 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# AI assistant config (not part of the project)
+CLAUDE.md
+AGENTS.md
+.gemini/
 
 # typescript
 *.tsbuildinfo

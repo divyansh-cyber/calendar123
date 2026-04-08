@@ -1,0 +1,151 @@
+.cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 42px;
+}
+
+.cell:hover {
+  background: var(--hover-bg);
+  transform: scale(1.08);
+}
+
+/* Other month days */
+.otherMonth {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.otherMonth:hover {
+  opacity: 0.7;
+}
+
+/* Weekend styling */
+.weekend {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Today */
+.today {
+  position: relative;
+}
+
+.today::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-color);
+}
+
+/* Start date */
+.startDate {
+  background: var(--accent-color) !important;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 12px 4px 4px 12px;
+  box-shadow: 0 4px 14px rgba(33, 150, 243, 0.35);
+  transform: scale(1.05);
+}
+
+/* End date */
+.endDate {
+  background: var(--accent-color) !important;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 4px 12px 12px 4px;
+  box-shadow: 0 4px 14px rgba(33, 150, 243, 0.35);
+  transform: scale(1.05);
+}
+
+/* Single date selected (start == end) */
+.singleDate {
+  border-radius: 12px !important;
+}
+
+/* In range */
+.inRange {
+  background: var(--range-bg) !important;
+  color: var(--accent-color);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.inRange:hover {
+  background: var(--range-hover-bg) !important;
+}
+
+/* Holiday indicator */
+.holidayDot {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Holiday tooltip */
+.cell[data-holiday]:hover::before {
+  content: attr(data-holiday);
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--tooltip-bg, #333);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Note indicator */
+.noteDot {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--note-indicator, #FF9800);
+}
+
+@media (max-width: 480px) {
+  .cell {
+    font-size: 0.82rem;
+    border-radius: 8px;
+    min-height: 36px;
+  }
+
+  .startDate, .endDate {
+    border-radius: 8px;
+  }
+
+  .cell[data-holiday]:hover::before {
+    font-size: 0.6rem;
+    top: -28px;
+  }
+}
